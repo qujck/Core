@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Qujck.Core
+namespace Qujck.Core.Commands
 {
     public interface ICommandHandler<TCommand> where TCommand : ICommand
     {

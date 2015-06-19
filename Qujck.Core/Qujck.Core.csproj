@@ -43,9 +43,9 @@
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\ISubscriber.cs" />
     <Compile Include="ICommand.cs" />
-    <Compile Include="ICommandHandler.cs" />
+    <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="IQuery.cs" />
-    <Compile Include="IQueryHandler.cs" />
+    <Compile Include="Queries\IQueryHandler.cs" />
     <Compile Include="IStrategyHandler.cs" />
     <Compile Include="Events\OnAfter.cs" />
     <Compile Include="Events\OnBefore.cs" />
