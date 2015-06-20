@@ -40,8 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\CommandHandlerEventDecorator.cs" />
     <Compile Include="Events\IEvent.cs" />
-    <Compile Include="Events\ISubscriber.cs" />
+    <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="ICommand.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="IQuery.cs" />
