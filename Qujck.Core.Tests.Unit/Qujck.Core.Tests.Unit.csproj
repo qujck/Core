@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Commands\CommandHandlerEventDecoratorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\QueryHandlerEventDecoratorTests.cs" />
     <Compile Include="_TestClasses\MockCommandHandler.cs" />
     <Compile Include="_TestClasses\MockEventHandler.cs" />
     <Compile Include="_TestClasses\StubQueryHandler.cs" />

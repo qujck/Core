@@ -16,7 +16,7 @@ namespace Qujck.Core.Events
         public TRequest Request { get; private set; }
     }
 
-    public class OnAfter<TRequest, TResponse>
+    public class OnAfter<TRequest, TResponse> : IEvent
     {
         public OnAfter(TRequest request, TResponse response)
         {

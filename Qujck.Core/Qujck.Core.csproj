@@ -46,6 +46,7 @@
     <Compile Include="ICommand.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="IQuery.cs" />
+    <Compile Include="Queries\QueryHandlerEventDecorator.cs" />
     <Compile Include="Queries\IQueryHandler.cs" />
     <Compile Include="IStrategyHandler.cs" />
     <Compile Include="Events\OnAfter.cs" />
