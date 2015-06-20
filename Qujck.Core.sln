@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qujck.Core", "Qujck.Core\Qujck.Core.csproj", "{9FEBD131-0D71-4C89-9514-0AC05F05B3B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Qujck.Core.Tests.Unit", "Qujck.Core.Tests.Unit\Qujck.Core.Tests.Unit.csproj", "{6E93C2AE-FB15-4F5B-B6EF-08E03380B7CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9FEBD131-0D71-4C89-9514-0AC05F05B3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FEBD131-0D71-4C89-9514-0AC05F05B3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FEBD131-0D71-4C89-9514-0AC05F05B3B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E93C2AE-FB15-4F5B-B6EF-08E03380B7CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E93C2AE-FB15-4F5B-B6EF-08E03380B7CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E93C2AE-FB15-4F5B-B6EF-08E03380B7CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E93C2AE-FB15-4F5B-B6EF-08E03380B7CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
