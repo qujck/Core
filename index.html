@@ -1,37 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en-us">
   <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Core : ">
-
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
-
-    <title>Core</title>
+    <meta charset="UTF-8">
+    <title>Core by qujck</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
-
   <body>
+    <section class="page-header">
+      <h1 class="project-name">Core</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/qujck/Core" class="btn">View on GitHub</a>
+      <a href="https://github.com/qujck/Core/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/qujck/Core/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/qujck/Core">View on GitHub</a>
-
-          <h1 id="project_title">Core</h1>
-          <h2 id="project_tagline"></h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/qujck/Core/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/qujck/Core/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
-
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h3>
+    <section class="main-content">
+      <h3>
 <a id="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here <a href="https://guides.github.com/features/mastering-markdown/">using GitHub Flavored Markdown</a>, select a template crafted by a designer, and publish. After your page is generated, you can check out the new <code>gh-pages</code> branch locally. If you’re using GitHub Desktop, simply sync your repository and you’ll see the new branch.</p>
@@ -46,6 +34,124 @@
 
 <p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
+<h2>
+<a id="commands" class="anchor" href="#commands" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=91">Commands</a>
+</h2>
+
+<blockquote>
+<p>Actions that change something and return nothing</p>
+</blockquote>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">ICommandHandler</span>&lt;TCommand&gt; where TCommand : <span class="pl-k">ICommand</span>
+{
+    <span class="pl-k">void</span> <span class="pl-en">Execute</span>(<span class="pl-k">TCommand</span> <span class="pl-smi">command</span>);
+}</pre></div>
+
+<hr>
+
+<h2>
+<a id="queries" class="anchor" href="#queries" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="https://www.cuttingedge.it/blogs/steven/pivot/entry.php?id=92">Queries</a>
+</h2>
+
+<blockquote>
+<p>Actions that return something and change nothing</p>
+</blockquote>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IQuery</span>&lt;TResult&gt;
+{
+}
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IQueryHandler</span>&lt;TQuery, TResult&gt; where TQuery : <span class="pl-k">IQuery</span>&lt;<span class="pl-k">TResult</span>&gt;
+{
+    TResult <span class="pl-en">Execute</span>(<span class="pl-k">TQuery</span> <span class="pl-smi">query</span>);
+}</pre></div>
+
+<hr>
+
+<h2>
+<a id="mediators" class="anchor" href="#mediators" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://en.wikipedia.org/wiki/Mediator_pattern">Mediators</a>
+</h2>
+
+<blockquote>
+<p>A combination of commands and queries</p>
+</blockquote>
+
+<p>There are two mediator abstractions. One that essentially mediates a call to a command and returns nothing</p>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IMediator</span>
+{
+}
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IMediatingHandler</span>&lt;TRequest&gt; where TRequest : <span class="pl-k">IMediator</span>
+{
+    <span class="pl-k">void</span> <span class="pl-en">Execute</span>(<span class="pl-k">TRequest</span> <span class="pl-smi">request</span>);
+}</pre></div>
+
+<p>And one that mediates the call to a query and returns something</p>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IMediator</span>&lt;TResult&gt; : <span class="pl-k">IMediator</span>
+{
+}
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IMediatingHandler</span>&lt;TRequest, TResult&gt; where TRequest : <span class="pl-k">IMediator</span>&lt;<span class="pl-k">TResult</span>&gt;
+{
+    TResult <span class="pl-en">Execute</span>(<span class="pl-k">TRequest</span> <span class="pl-smi">request</span>);
+}</pre></div>
+
+<hr>
+
+<h1>
+<a id="events-observers" class="anchor" href="#events-observers" aria-hidden="true"><span class="octicon octicon-link"></span></a>Events (<a href="http://www.dofactory.com/net/observer-design-pattern">Observers</a>)</h1>
+
+<blockquote>
+<p>Side effects</p>
+</blockquote>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">IEvent</span>
+{
+}
+
+<span class="pl-k">public</span> <span class="pl-k">interface</span> <span class="pl-en">ISubscriber</span>&lt;TEvent&gt; where TEvent : <span class="pl-k">IEvent</span>
+{
+    <span class="pl-k">void</span> <span class="pl-en">Handle</span>(<span class="pl-k">TEvent</span> <span class="pl-smi">param</span>);
+}</pre></div>
+
+<p>The system has 3 events to cater for <em>pre</em> and <em>post</em> an activity: events are triggered before and after calling each <code>QueryHandler&lt;,&gt;</code> and <code>CommandHandler&lt;&gt;</code>.</p>
+
+<div class="highlight highlight-csharp"><pre><span class="pl-k">public</span> <span class="pl-k">sealed</span> <span class="pl-k">class</span> <span class="pl-en">OnBefore</span>&lt;TRequest&gt; : <span class="pl-k">IEvent</span>
+{
+    <span class="pl-k">public</span> <span class="pl-en">OnBefore</span>(<span class="pl-k">TRequest</span> <span class="pl-smi">response</span>)
+    {
+        <span class="pl-c1">this</span>.Request = response;
+    }
+
+    <span class="pl-k">public</span> TRequest <span class="pl-en">Request</span> { <span class="pl-k">get</span>; <span class="pl-k">private</span> <span class="pl-k">set</span>; }
+}
+
+<span class="pl-k">public</span> <span class="pl-k">sealed</span> <span class="pl-k">class</span> <span class="pl-en">OnAfter</span>&lt;TRequest&gt; : <span class="pl-k">IEvent</span>
+{
+    <span class="pl-k">public</span> <span class="pl-en">OnAfter</span>(<span class="pl-k">TRequest</span> <span class="pl-smi">request</span>)
+    {
+        <span class="pl-c1">this</span>.Request = request;
+    }
+
+    <span class="pl-k">public</span> TRequest <span class="pl-en">Request</span> { <span class="pl-k">get</span>; <span class="pl-k">private</span> <span class="pl-k">set</span>; }
+}
+
+<span class="pl-k">public</span> <span class="pl-k">sealed</span> <span class="pl-k">class</span> <span class="pl-en">OnAfter</span>&lt;TRequest, TResponse&gt; : <span class="pl-k">IEvent</span>
+{
+    <span class="pl-k">public</span> <span class="pl-en">OnAfter</span>(<span class="pl-k">TRequest</span> <span class="pl-smi">request</span>, <span class="pl-k">TResponse</span> <span class="pl-smi">response</span>)
+    {
+        <span class="pl-c1">this</span>.Request = request;
+
+        <span class="pl-c1">this</span>.Response = response;
+    }
+
+    <span class="pl-k">public</span> TRequest <span class="pl-en">Request</span> { <span class="pl-k">get</span>; <span class="pl-k">private</span> <span class="pl-k">set</span>; }
+
+    <span class="pl-k">public</span> TResponse <span class="pl-en">Response</span> { <span class="pl-k">get</span>; <span class="pl-k">private</span> <span class="pl-k">set</span>; }
+}</pre></div>
+
 <h3>
 <a id="authors-and-contributors" class="anchor" href="#authors-and-contributors" aria-hidden="true"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
 
@@ -55,18 +161,15 @@
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
-      </section>
-    </div>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Core maintained by <a href="https://github.com/qujck">qujck</a></p>
-        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/qujck/Core">Core</a> is maintained by <a href="https://github.com/qujck">qujck</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
 
-    
+    </section>
 
+  
   </body>
 </html>
