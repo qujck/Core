@@ -1,6 +1,6 @@
 name: Qujck.Core
 url: http://qujck.com
-highlighter: true
+highlighter: pygments
 safe: true
 lsi: false
 timezone: Europe/London
