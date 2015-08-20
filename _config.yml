@@ -1,10 +1,4 @@
-name: Qujck.Core
-url: http://qujck.com
 highlighter: pygments
-safe: true
-lsi: false
-timezone: Europe/London
-permalink: /blog/:year/:month/:title.html
 markdown: redcarpet
 redcarpet:
   extensions: ["prettify", "with_toc_data", "strikethrough", "footnotes", "fenced_code_blocks"]
