@@ -5,10 +5,7 @@ title: Abstractions
 
 # [Abstractions](http://en.wikipedia.org/wiki/Abstraction_&#40;computer_science&#41;)
 
-
-The main architectural pattern is [CQRS](https://msdn.microsoft.com/en-us/library/jj554200.aspx).
-
-###### *(NOTE: Any blue title text is a link to a page providing more information)*
+[CQRS](https://msdn.microsoft.com/en-us/library/jj554200.aspx).
 
 ----------
 

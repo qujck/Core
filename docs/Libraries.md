@@ -13,13 +13,13 @@ title: Libraries
 
 ### SOAP
 
-[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation) is used by both the Web and App tiers to communicate with 3rd SOAP services.
+[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation).
 
 ----------
 
 ### REST
 
-[RestSharp](http://restsharp.org/) is used for communication between the Web and App tiers.
+[RestSharp](http://restsharp.org/).
 
 ----------
 
@@ -31,12 +31,13 @@ title: Libraries
 
 ### Error handling
 
-The application uses a [modified](http://qujck.com/elmah-in-the-enterprise/) installation of [Elmah](https://code.google.com/p/elmah/). Elmah is designed to store errors on the hard drive or in a database. The modification is to send the error messages to the App layer for logging in the database.
+I have a [modified](http://qujck.com/elmah-in-the-enterprise/) installation of [Elmah](https://code.google.com/p/elmah/). Elmah is designed to store errors on the hard drive or in a database. The modification is to send the error messages to the App layer for logging in the database.
 
 ----------
 
 ### Unit and Integration Tests
 
 [xUnit](http://xunit.github.io/)
+[NCrunch](http://www.ncrunch.net/)
 
 ----------
