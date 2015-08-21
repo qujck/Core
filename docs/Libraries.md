@@ -13,13 +13,13 @@ title: Libraries
 
 ### SOAP
 
-[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation).
+[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation)
 
 ----------
 
 ### REST
 
-[RestSharp](http://restsharp.org/).
+[RestSharp](http://restsharp.org/)
 
 ----------
 
@@ -37,7 +37,6 @@ I have a [modified](http://qujck.com/elmah-in-the-enterprise/) installation of [
 
 ### Unit and Integration Tests
 
-[xUnit](http://xunit.github.io/)
-[NCrunch](http://www.ncrunch.net/)
+[xUnit](http://xunit.github.io/) & [NCrunch](http://www.ncrunch.net/)
 
 ----------
