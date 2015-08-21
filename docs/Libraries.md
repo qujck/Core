@@ -13,7 +13,7 @@ title: Libraries
 
 ### SOAP
 
-[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation) is used by both the Web and App tiers to communicate with EngageOne.
+[WCF](http://en.wikipedia.org/wiki/Windows_Communication_Foundation) is used by both the Web and App tiers to communicate with 3rd SOAP services.
 
 ----------
 
