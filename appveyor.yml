@@ -3,7 +3,7 @@ os: Visual Studio 2015
 before_build:
 - nuget restore
 skip_tags: true
-configuration: Release
+configuration: Debug
 assembly_info:
   patch: true
   file: '**\AssemblyInfo.*'
