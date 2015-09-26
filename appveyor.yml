@@ -17,7 +17,7 @@ environment:
     COVERALLS_REPO_TOKEN:  
        secure: 8UBkBZctLBmH2IN911Q6tWJIcLaPLNIx1KvleGgKdwir6PTByCuyLERppzN2OFoi
 after_test: 
-  - C:\projects\core\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -mergeoutput -register:user -target:"%xunit20%\xunit.console.x86.exe" "-targetargs:\"C:\projects\core\Qujck.Core.Tests.Unit\bin\Debug\Qujck.Core.Tests.Unit.dll\" \"C:\projects\core\Qujck.Core\bin\Debug\Qujck.Core.dll\"  -noshadow" -filter:"+[*]Qujck.* -[*.Tests]*" -output:opencoverCoverage.xml
+  - C:\projects\core\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -mergeoutput -register:user -target:"%xunit20%\xunit.console.x86.exe" "-targetargs:\"C:\projects\core\Qujck.Core.Tests.Unit\bin\Debug\Qujck.Core.Tests.Unit.dll\" \"C:\projects\core\Qujck.Core\bin\Debug\Qujck.Core.dll\"  -noshadow" -filter:"+[*]Qujck.* -[*.Tests.*]*" -output:opencoverCoverage.xml
   - C:\projects\core\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover -i opencoverCoverage.xml --repoToken %COVERALLS_REPO_TOKEN% --commitBranch %APPVEYOR_REPO_BRANCH%
 
 
