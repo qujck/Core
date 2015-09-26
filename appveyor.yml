@@ -1,0 +1,21 @@
+version: 1.0.{build}
+os: Visual Studio 2015
+before_build:
+- nuget restore
+skip_tags: true
+configuration: Release
+assembly_info:
+  patch: true
+  file: '**\AssemblyInfo.*'
+  assembly_version: '{version}'
+  assembly_file_version: '{version}'
+  assembly_informational_version: '{version}'
+build:
+  project: Qujck.Core.sln
+  verbosity: minimal
+environment:
+    COVERALLS_REPO_TOKEN:  
+       secure: 8UBkBZctLBmH2IN911Q6tWJIcLaPLNIx1KvleGgKdwir6PTByCuyLERppzN2OFoi
+after_test: 
+  - Source\packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -mergeoutput -register:user -target:"Source\packages\NUnit.Runners.2.6.4\tools\nunit-console.exe" "-targetargs:""Source\Qujck.Core.Tests.Unit\bin\Release\Qujck.Core.Tests.Unit.dll"" /noshadow" -output:opencoverCoverage.xml
+  - Source\packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover -i opencoverCoverage.xml --repoToken %COVERALLS_REPO_TOKEN% --commitBranch %APPVEYOR_REPO_BRANCH%
