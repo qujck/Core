@@ -21,7 +21,6 @@ after_test:
   - packages\OpenCover.4.6.166\tools\OpenCover.Console.exe -mergeoutput -register:user -target:"%xunit20%\xunit.console.x86.exe" "-targetargs:\"Qujck.Core.Tests.Unit\bin\Debug\Qujck.Core.Tests.Unit.dll\" -noshadow" -filter:"+[*]Qujck.* -[*.Tests.*]*" -output:reports\opencoverCoverage.xml
   - packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover -i reports\opencoverCoverage.xml --repoToken %COVERALLS_REPO_TOKEN% --commitBranch %APPVEYOR_REPO_BRANCH%
   - packages\ReportGenerator.2.3.2.0\tools\ReportGenerator.exe  -reports:"reports\opencoverCoverage.xml" -targetdir:"reports" 
-  - nuget spec Qujck.Core\bin\Debug\Qujck.Core.dll
-  - move Qujck.Core\bin\Debug\Qujck.Core.dll.nuspec .\
-  - ren Qujck.Core.dll.nuspec Qujck.Core.nuspec
+  - nuget spec 
+  - ren Packages.1.0.0.nuspec Qujck.Core.nuspec
   - nuget pack
