@@ -22,5 +22,4 @@ after_test:
   - packages\coveralls.net.0.6.0\tools\csmacnz.Coveralls.exe --opencover -i reports\opencoverCoverage.xml --repoToken %COVERALLS_REPO_TOKEN% --commitBranch %APPVEYOR_REPO_BRANCH%
   - packages\ReportGenerator.2.3.2.0\tools\ReportGenerator.exe  -reports:"reports\opencoverCoverage.xml" -targetdir:"reports" 
   - nuget spec 
-  - ren Packages.1.0.0.nuspec Qujck.Core.nuspec
   - nuget pack
