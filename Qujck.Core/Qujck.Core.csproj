@@ -41,11 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Commands\CommandHandlerEventDecorator.cs" />
+    <Compile Include="Commands\ICommandDataHandler.cs" />
+    <Compile Include="Commands\ICommandStrategyHandler.cs" />
     <Compile Include="Events\IEvent.cs" />
     <Compile Include="Events\IEventHandler.cs" />
     <Compile Include="Commands\ICommand.cs" />
     <Compile Include="Commands\ICommandHandler.cs" />
     <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryDataHandler.cs" />
+    <Compile Include="Queries\IQueryStrategyHandler.cs" />
     <Compile Include="Queries\QueryHandlerEventDecorator.cs" />
     <Compile Include="Queries\IQueryHandler.cs" />
     <Compile Include="Events\OnAfter.cs" />

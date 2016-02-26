@@ -17,7 +17,7 @@ namespace Qujck.Core.Tests.Unit.Commands
             bool called = false;
             bool decoratedInstanceHasBeenCalled = false;
 
-            var beforeEventHandlers = new MockEventHandler<OnBefore<FakeCommand>>[]
+            var beforeEventHandlers = new[]
             {
                 new MockEventHandler<OnBefore<FakeCommand>>(parameter => decoratedInstanceHasBeenCalled = called),
                 new MockEventHandler<OnBefore<FakeCommand>>(parameter => decoratedInstanceHasBeenCalled = called),
@@ -43,7 +43,7 @@ namespace Qujck.Core.Tests.Unit.Commands
             bool called = false;
             bool decoratedInstanceHasBeenCalled = false;
 
-            var afterEventHandlers = new MockEventHandler<OnAfter<FakeCommand>>[]
+            var afterEventHandlers = new[]
             {
                 new MockEventHandler<OnAfter<FakeCommand>>(parameter => decoratedInstanceHasBeenCalled = called),
                 new MockEventHandler<OnAfter<FakeCommand>>(parameter => decoratedInstanceHasBeenCalled = called),
@@ -66,7 +66,7 @@ namespace Qujck.Core.Tests.Unit.Commands
         [Fact]
         public void Handle_Always_PassesTheCommandIntoEachBeforeEventHandler()
         {
-            var beforeEventHandlers = new MockEventHandler<OnBefore<FakeCommand>>[]
+            var beforeEventHandlers = new[]
             {
                 new MockEventHandler<OnBefore<FakeCommand>>(),
                 new MockEventHandler<OnBefore<FakeCommand>>(),
@@ -90,7 +90,7 @@ namespace Qujck.Core.Tests.Unit.Commands
         [Fact]
         public void Handle_Always_PassesTheCommandIntoEachAfterEventHandler()
         {
-            var afterEventHandlers = new MockEventHandler<OnAfter<FakeCommand>>[]
+            var afterEventHandlers = new[]
             {
                 new MockEventHandler<OnAfter<FakeCommand>>(),
                 new MockEventHandler<OnAfter<FakeCommand>>(),
